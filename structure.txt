@@ -1,0 +1,85 @@
+/sms-dashboard-project
+│
+├── /backend
+│   ├── /config
+│   │   ├── db.js                # Database connection setup (MongoDB & MySQL)
+│   │   ├── auth.js              # JWT authentication middleware
+│   │   └── index.js             # Main configuration settings
+│   │
+│   ├── /controllers
+│   │   ├── sessionController.js  # Logic for session management
+│   │   ├── metricsController.js   # Logic for SMS metrics
+│   │   ├── countryOperatorController.js # Logic for country-operator management
+│   │   └── alertController.js     # Logic for alerting
+│   │
+│   ├── /models
+│   │   ├── Session.js            # Mongoose model for session management
+│   │   ├── CountryOperator.js     # Mongoose model for country-operator pairs
+│   │   └── Metric.js             # Sequelize model for SMS metrics
+│   │
+│   ├── /routes
+│   │   ├── sessionRoutes.js       # API routes for session management
+│   │   ├── metricsRoutes.js       # API routes for metrics
+│   │   └── countryOperatorRoutes.js# API routes for country-operator management
+│   │
+│   ├── /scripts
+│   │   └── smsScripts.py          # Python scripts for SMS functionality
+│   │
+│   ├── /services
+│   │   └── telegramService.js      # Logic for sending alerts via Telegram
+│   │
+│   ├── /middleware
+│   │   └── adminMiddleware.js      # Middleware for authorization checks
+│   │
+│   ├── app.js                     # Main application file
+│   └── server.js                  # Server initialization
+│
+├── /frontend
+│   ├── /public
+│   │   ├── index.html             # Main HTML file
+│   │   └── favicon.ico            # Application favicon
+│   │
+│   ├── /src
+│   │   ├── /components
+│   │   │   ├── Dashboard.js        # Dashboard component for metrics
+│   │   │   ├── ProgramControl.js   # Component for controlling SMS sessions
+│   │   │   ├── CountryOperatorManagement.js # Component for managing country-operator pairs
+│   │   │   └── Login.js            # Login component
+│   │   │
+│   │   ├── /context
+│   │   │   └── AuthContext.js      # Context for authentication
+│   │   │
+│   │   ├── /hooks
+│   │   │   └── useMetrics.js       # Custom hook for fetching metrics
+│   │   │
+│   │   ├── /pages
+│   │   │   ├── DashboardPage.js     # Dashboard page
+│   │   │   ├── ProgramControlPage.js# Program control page
+│   │   │   ├── CountryOperatorPage.js # Country-Operator management page
+│   │   │   └── LoginPage.js        # Login page
+│   │   │
+│   │   ├── /services
+│   │   │   ├── api.js              # API calls to backend
+│   │   │   └── authService.js      # Authentication logic
+│   │   │
+│   │   ├── /styles
+│   │   │   └── styles.css          # Global styles
+│   │   │
+│   │   ├── App.js                  # Main App component
+│   │   └── index.js                # Entry point for React
+│   │
+├── /monitoring
+│   ├── /prometheus
+│   │   └── prometheus.yml         # Prometheus configuration file
+│   │
+│   └── /grafana
+│       └── dashboards.json         # Grafana dashboard configurations
+│
+├── /scripts                        # Any additional scripts (e.g., deployment scripts)
+│
+├── .env                            # Environment variables
+├── .gitignore                      # Git ignore file
+├── package.json                    # Node.js dependencies and scripts
+├── package-lock.json               # Lock file for dependencies
+├── README.md                       # Project documentation
+└── Dockerfile                      # Dockerfile for containerization (if applicable)

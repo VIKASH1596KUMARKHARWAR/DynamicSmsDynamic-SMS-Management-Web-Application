@@ -1,0 +1,85 @@
+Project Structure
+1. Project Overview
+Objective: Create a web-based dashboard for managing an SMS system that runs Python scripts on Linux.
+Key Features:
+Control SMS process sessions.
+Monitor SMS metrics (success rates, errors).
+Manage country-operator pairs.
+Alert on failures or drops in success rates.
+2. Architecture
+Frontend: ReactJS for real-time dashboards.
+Backend: Node.js with Express for API and process control.
+Databases:
+MongoDB: Configuration and country-operator management.
+MySQL: SMS metrics and historical data.
+Monitoring & Alerts: Prometheus for metrics, Grafana for visualization, and Telegram bot for notifications.
+3. Technical Breakdown
+A. Backend (Node.js & Express)
+Session Management:
+Create endpoints for starting, stopping, and restarting screen sessions running Python programs.
+Implement a session manager to handle commands, associating each screen with country-operator pairs.
+SMS Metrics API:
+Endpoints for real-time SMS metrics, success rates, and error counts.
+Implement rate limiting (max 10 SMS/minute per country).
+Country-Operator Management API:
+CRUD operations for country-operator pairs.
+Endpoint for marking pairs as high-priority.
+Alert System:
+Detect failure or critical drop in success rates.
+Send alerts via Telegram bot for issues.
+Authentication:
+JWT-based authentication for securing the API.
+Authorization checks for sensitive operations.
+B. Frontend (React)
+Dashboard:
+Real-time charts and tables for SMS metrics.
+Optional WebSocket integration for live updates.
+Program Control Page:
+Control buttons for each SMS program session.
+Status indicators for sessions (active/inactive).
+Country-Operator Management:
+UI for CRUD operations on country-operator pairs.
+Display section for high-priority pairs.
+Login Page:
+Secure login form using JWT authentication.
+C. Databases
+MongoDB:
+Store configuration data (country-operator pairs, session details).
+MySQL:
+Store SMS metrics (success rates, errors) for real-time querying.
+D. Monitoring and Alerts
+Prometheus & Grafana:
+Set up Prometheus to scrape SMS metrics.
+Create Grafana dashboards for data visualization.
+AlertManager:
+Monitor success rates and process health.
+Configure Telegram bot for alerts.
+4. Implementation Plan
+Step 1: Backend Setup
+Project Initialization:
+Initialize a Node.js app with Express.
+Set up Python scripts in screen sessions.
+API Endpoints:
+Implement endpoints for session management, metrics retrieval, and country-operator management.
+Alert System:
+Logic for monitoring success rates and sending alerts.
+Authentication:
+Implement JWT-based authentication.
+Database Integration:
+Set up MongoDB and MySQL connections using Mongoose and Sequelize/Knex.
+Step 2: Frontend Setup
+React Components:
+Create components for Dashboard, Program Control, Country-Operator Management, and Login.
+Real-Time Data:
+Integrate WebSockets for live updates (optional).
+Step 3: Monitoring and Alerts
+Prometheus & Grafana:
+Set up Prometheus scraping and Grafana dashboard configuration.
+AlertManager Integration:
+Configure AlertManager for monitoring and Telegram bot for notifications.
+5. Version Control & Deployment
+Version Control: Use Git for version control, with a clear branching strategy (e.g., feature branches).
+Deployment: Consider using Docker for containerization and deploy on a cloud platform (e.g., AWS, Heroku).
+6. Documentation
+Maintain clear documentation for API endpoints, architecture, and setup instructions.
+This structure should provide a solid foundation for your project, allowing you to organize tasks and track progress efficiently.
