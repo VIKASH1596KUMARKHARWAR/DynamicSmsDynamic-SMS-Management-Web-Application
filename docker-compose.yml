@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend  # Adjust this to the path where your backend code and Dockerfile are located
+      dockerfile: Dockerfile  # Adjust if your Dockerfile is named differently
+    ports:
+      - "5000:5000"  # Map the backend port as needed
+
+  frontend:
+    build:
+      context: ./frontend  # Adjust this to the path where your frontend code and Dockerfile are located
+      dockerfile: Dockerfile  # Adjust if your Dockerfile is named differently
+    ports:
+      - "3000:3000"  # Map the frontend port as needed
+    depends_on:
+      - backend  # Ensure the backend starts before the frontend

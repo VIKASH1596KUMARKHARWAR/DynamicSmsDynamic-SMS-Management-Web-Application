@@ -1,0 +1,76 @@
+Great! It looks like your script is now running successfully and producing the expected output. Here’s a summary of what’s happening:
+
+The script is correctly receiving the command-line arguments testCountry and testOperator.
+It logs and prints the progress of sending SMS messages, simulating the sending process with a sleep timer.
+Finally, it logs the completion message as expected.
+Next Steps
+Check the Log File: Ensure that the sms_script.log file is created and contains the logged messages. You can view it using:
+
+bash
+Copy code
+cat sms_script.log
+Refining the Script: If you plan to add more functionality (like actual SMS sending), consider modularizing your code. You could create separate functions for different tasks (e.g., sending SMS, logging, etc.).
+
+Error Handling: As you develop further, think about adding more robust error handling to manage potential issues (e.g., failed SMS sends).
+
+Testing: Since this is a simulation, when you're ready to integrate with an actual SMS service, ensure you implement and test the API calls correctly.
+
+If you have any more questions or need help with additional features, feel free to ask!
+
+
+
+
+
+
+
+
+
+===================================================================
+start ::: screen -r node_backend
+end-temporary   ::: ctrl +a +d
+
+
+
+
+==========================================
+screen -dmS test_session bash -c "python3 ~/Documents/instenship/Dynamic\ SMS\ Management\ Web\ Application/sms-dashboard-project/backend/scripts/testScript1.py India jio > screen_output.log 2>&1; sleep 600"
+screen -dmS test_session bash -c "python3 ~/Documents/instenship/Dynamic\ SMS\ Management\ Web\ Application/sms-dashboard-project/backend/scripts/testScript1.py India jio > screen_output.log 2>&1; tail -f /dev/null"
+
+
+
+==============
+
+board-project/backend/scripts$ ^C
+(base) vikash@vikash-Victus-by-HP-Gaming-Laptop-15-fb0xxx:~/Documents/instenship/Dynamic SMS Management Web Application/sms-dashboard-project/backend/scripts$ screen -dmS test_session bash -c "python3 ~/Documents/instenship/Dynamic\ SMS\ Management\ Web\ Application/sms-dashboard-project/backend/scripts/testScript1.py India jio > screen_output.log 2>&1; sleep 600"
+
+
+
+List All Sessions:
+
+bash
+Copy code
+screen -ls
+Attach to a Session:
+
+bash
+Copy code
+screen -r <session_id>
+Replace <session_id> with the actual ID from your screen -ls output (e.g., 62754.program_India_jio_testScript1).
+
+Detach from a Session: Press Ctrl + A, then D to detach from an attached session.
+
+Terminate a Session: If you need to kill a session, you can do so with:
+
+bash
+Copy code
+screen -X -S <session_id> quit
+3. Debugging Tips
+If your script isn’t behaving as expected, consider the following:
+
+Log Output: Keep checking the log file to see any errors or output that might help you diagnose issues.
+
+Script Debugging: You can add more logging within your Python script to capture various states or errors. For example:
+
+python
+Copy code
+logging.info("This is a debug message")

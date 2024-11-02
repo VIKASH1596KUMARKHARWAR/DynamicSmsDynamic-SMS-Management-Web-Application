@@ -1,0 +1,8 @@
+MongoDB
+Use MongoDB for:
+                    Dynamic Configuration Management: Since MongoDB is schema-less, it's ideal for storing configurations like country-operator pairs and their priority status. This allows for easy updates and flexibility as you may frequently change these pairs.
+                    Session Management: Store details about running sessions, such as session IDs, statuses (active/inactive), and whether a pair is high-priority. This can be easily modified as the SMS management requirements change.
+MySQL
+Use MySQL for:
+                    Metrics Storage: Store SMS performance data, such as SMS sent counts, success rates, and error logs. MySQL’s structured data model is beneficial for querying historical performance trends and generating reports.
+                    Rate Limiting: Maintain records of SMS sent per country/operator. This allows you to enforce rate limits efficiently through queries.

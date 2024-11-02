@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/vikash/Documents/instenship/Dynamic SMS Management Web Application/sms-dashboard-project/backend/scripts/smsScripts.py", line 34, in <module>
+    main()
+  File "/home/vikash/Documents/instenship/Dynamic SMS Management Web Application/sms-dashboard-project/backend/scripts/smsScripts.py", line 29, in main
+    time.sleep(2)
+KeyboardInterrupt
